@@ -107,7 +107,7 @@ public class VideoQuiz extends RESTService {
   })
   @ApiOperation(value = "GetQuiz", notes = " ")
   public Response GetQuiz(@PathParam("id") String id) {
-try{ 
+        try{ 
          Connection conn = service.dbm.getConnection();  
         PreparedStatement stmnt = conn.prepareStatement("SELECT question, videolink, answerA, answerB, answerC, answerD from Quiz where Quiz.id = " + id); 
         ResultSet rs = stmnt.executeQuery(); 
