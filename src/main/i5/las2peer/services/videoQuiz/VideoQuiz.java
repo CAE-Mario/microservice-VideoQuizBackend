@@ -127,13 +127,7 @@ try{
         JSONObject result = new JSONObject(); 
         return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity(result.toJSONString()).build();
     }
-    // 
-    boolean _condition = true;
-    if(_condition) {
-      JSONObject  = new JSONObject();
-      return Response.status(HttpURLConnection.HTTP_OK).entity(.toJSONString()).build();
-    }
-    return null;
+
   }
 
 
