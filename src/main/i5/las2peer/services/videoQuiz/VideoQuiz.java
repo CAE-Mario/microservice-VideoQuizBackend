@@ -107,7 +107,26 @@ public class VideoQuiz extends RESTService {
   })
   @ApiOperation(value = "GetQuiz", notes = " ")
   public Response GetQuiz(@PathParam("id") String id) {
-
+try{ 
+         Connection conn = service.dbm.getConnection();  
+        PreparedStatement stmnt = conn.prepareStatement("SELECT question, videolink, answerA, answerB, answerC, answerD from Quiz where Quiz.id = " + id); 
+        ResultSet rs = stmnt.executeQuery(); 
+        JSONObject result = new JSONObject(); 
+        while(rs.next()){ 
+         result.put("question", rs.getString(1)); 
+         result.put("videolink", rs.getString(2)); 
+         result.put("answerA", rs.getString(3)); 
+         result.put("answerB", rs.getString(4)); 
+         result.put("answerC", rs.getString(5)); 
+         result.put("answerD", rs.getString(6)); 
+        } 
+        stmnt.close(); 
+        return Response.status(HttpURLConnection.HTTP_OK).entity(result.toJSONString()).build();
+    } 
+    catch(Exception e){ 
+        JSONObject result = new JSONObject(); 
+        return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity(result.toJSONString()).build();
+    }
     // 
     boolean _condition = true;
     if(_condition) {
