@@ -1,12 +1,12 @@
 --
--- Database Schema:  cae-schema
+-- Database Schema:  caeschema
 -- Automatically generated sql script for the service VideoQuizBackend, created by the CAE.
 -- --------------------------------------------------------
 
 --
 -- Table structure for table Quiz.
 --
-CREATE TABLE cae-schema.Quiz (
+CREATE TABLE caeschema.Quiz (
   answerD varchar(250) ,
   answerB varchar(250) ,
   answerC varchar(250) ,
