@@ -49,7 +49,7 @@ public class VideoQuizTest {
   // version does not matter in tests
   private static final ServiceNameVersion testTemplateService = new ServiceNameVersion(VideoQuiz.class.getCanonicalName(),"0.1");
 
-  private static final String mainPath = "videoquiz";
+  private static final String mainPath = "videoquiz/";
 
 
   /**

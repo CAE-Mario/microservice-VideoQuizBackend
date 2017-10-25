@@ -43,7 +43,7 @@ import org.json.simple.*;
  * outsourced to (imported) classes.
  *
  */
-@ServicePath("videoquiz")
+@ServicePath("videoquiz/")
 public class VideoQuiz extends RESTService {
 
 
